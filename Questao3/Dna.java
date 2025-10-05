@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.Arrays;
 public class Dna{
     private char[] sequencia = new char[9];
-
+    public int[] similaridade = new int[9];
     public Dna(){
         lerDna();
     }
@@ -37,18 +37,20 @@ public class Dna{
         }
         return cont;
     }
-    public void verificarSimilaridade(Dna outro){
-        int[] similaridade = new int[9];
+    public int verificarSimilaridade(Dna outro){
+        
+        int cont =0;
         char[] outraSequencia = outro.getSequencia();
 
         for(int i=0;i<sequencia.length;i++){
             if(sequencia[i] == outraSequencia[i]){
                 similaridade[i] = 1;
+                cont++;
             }else{
                 similaridade[i] = 0;
             }
         }
-        System.out.println(Arrays.toString(similaridade));
-
+        
+        return cont;
     }
 }
