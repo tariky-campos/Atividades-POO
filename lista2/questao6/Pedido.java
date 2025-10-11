@@ -49,3 +49,26 @@ class Pedido {
         System.out.println("Pedido finalizado!");
     }
 }
+
+// Classe Main para teste
+public class Main {
+    public static void main(String[] args) {
+        // Criando produtos
+        Produto produto1 = new Produto("Notebook", 2500.00, 5);
+        Produto produto2 = new Produto("Mouse", 89.90, 10);
+        
+        // Criando pedido
+        Pedido pedido = new Pedido(1, "João Silva");
+        
+        // Adicionando produtos ao pedido
+        pedido.adicionaProduto(produto1);
+        pedido.adicionaProduto(produto2);
+        
+        // Calculando preço final
+        double total = pedido.calculaPrecoFinal();
+        System.out.println("Total do pedido: R$ " + total);
+        
+        // Finalizando pedido
+        pedido.finalizarPedido();
+    }
+}
